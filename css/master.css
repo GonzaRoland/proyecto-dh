@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/bg.gif);
+    font-family: sans-serif;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+
+
+}
+
+.main-header {
+    margin: 20px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*width: 1600px;*/
+}
+
+.logo {
+    border: 2px solid darkgray;
+    width: 200px;
+    border-radius: 60%;
+    margin-bottom: 10px; 
+}
+
+.main-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px 10px 0px;
+}
+
+.main-nav a{
+    text-align: center;
+    width: 12.5%;
+    padding: 15px 0px 15px 0px;
+    text-decoration: none;
+    border-radius: 10%;
+    color: white;
+    background-color: darkgray;
+    opacity: 0.8; 
+
+}
+
+.main-nav a:hover {
+    opacity: 1;
+
+}
+
+.banner{
+    margin: 10px 0px 10px 0px;
+}
+
+.vip-doggos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1600px;
+}
+
+main {
+    margin: 10px 0px 10px 0px;
+}
+
+.doggo {
+    max-width: 28.125%;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.doggo-pic {
+    max-width: 100%;
+    border-radius: 5%;
+    border: 3px darkgray;
+    border-style: inset;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+    font-size: 1.5em;
+}
+
+.doggo a{
+    text-align: center;
+    display: box;
+    width: 150px;
+    padding: 15px 0px 15px 0px;
+    text-decoration: none;
+    border-radius: 10%;
+    color: white;
+    background-color: darkgray;
+    opacity: 0.8; 
+    margin: 10px 0px 10px 0px;
+}
+
+.doggo a:hover{
+    opacity: 1;
+}
+
+.footer-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+}
+
+.footer-nav a{
+    text-decoration: none;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: black;
+    padding: 0px 5px 0px 5px;
+}
+
+i {
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .main-nav a{
+        width: 96px;
+        font-size: 1em;
+    }
+    .doggo{
+        max-width: 40%;
+    }
+
+    .doggo a{
+        width: 50%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    
+    .main-nav{
+        flex-direction: column;
+    }
+    
+    .main-nav a{
+        border-radius: 0%;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+}
+
+@media (max-width: 424.98px) {
+    .main-header{
+        width: 100%;
+    }
+
+    .vip-doggos{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .doggo a{
+        align-self: center;
+    }
+
+    .banner{
+        display: none;
+    }
+    
+    .doggo{
+        max-width: 90%;
+        align-self: center;
+     
+    }
+
+    p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .footer-nav{
+        flex-direction: column;
+    }
+
+    .footer-nav a{
+        border: none;
+
+    }
+}
