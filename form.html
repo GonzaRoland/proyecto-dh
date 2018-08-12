@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DOGGOS - REGISTRO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/form.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex-container">
+            <header class="main-header">
+                <img class="logo" src="img/logo.png">
+                <section class="user">
+                    <article>
+                        <a href="login.html">Iniciar Sesión</a>
+                    </article>
+                    <article>
+                        <a href="form.html">Registrate</a>
+                    </article>
+                </section>
+                <nav class="main-nav">
+                    <a href="index.html">Home</a>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Servicios</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Sucursales</a>
+                    <a href="#">Contacto</a>
+                </nav>
+                <!-- <section class="banner">
+                    <img src="img/banner.jpg">
+                </section> lo saqué porque me parece que molestaba-->
+            </header>
+            <main>
+                <section>
+                    <p align="center" class="p-form"><strong>¡Creá tu cuenta con nosotros!</strong></p>
+                    <br>
+                    <form class="datos" action="" method="POST">
+                        <fieldset class="ppal">
+                            <fieldset>
+                                <label for="nombre" name="nombre">Nombre:</label>
+                                <input type="text" name="nombre" placeholder="Escribí tu nombre">
+                                <br>
+                                <label for="apellido" name="apellido">Apellido:</label>
+                                <input type="text" name="apellido" placeholder="Escribí tu apellido">
+                                <br>
+                                <br>
+                                <h3><label for="genero" name="genero">Género</label></h3>
+                                <label for="genero" name="femenino">Femenino</label>
+                                <input type="radio" name="genero">
+                                <label for="genero" name="indefinido">Indefinido</label>
+                                <input type="radio" name="genero">
+                                <label for="genero" name="masculino">Masculino</label>
+                                <input type="radio" name="genero">
+                                <label for="genero" name="otro">Otro</label>
+                                <input type="radio" name="genero">
+                                <br>
+                                <br>
+                                <label for="mail" name="mail">e-Mail:</label>
+                                <input type="email" name="mail" placeholder="Escribí tu e-Mail">
+                                <br>
+                                <br>
+                                <label for="user">Nombre de usuario:</label>
+                                <br>
+                                <input type="text" placeholder="Elegí tu nombre de usuario">
+                                <br>
+                                <label for="password">Password:</label>
+                                <br>
+                                <input type="password" placeholder="Elegí tu contraseña">
+                                <input type="password" placeholder="Confirmá tu contraseña">
+                            </fieldset>
+                            <fieldset>
+                                <br>
+                                <h3><label for="animals">¿Qué animales te gustan?</label></h3>
+                                <br>
+                                <label for="animals" name="gatos">Gatos</label>
+                                <input type="checkbox" name="gatos">
+                                <label for="animals" name="perros">Perros</label>
+                                <input type="checkbox" name="perros">
+                                <label for="animals" name="aves">aves</label>
+                                <input type="checkbox" name="aves">
+                                <label for="animals" name="reptiles">Reptiles</label>
+                                <input type="checkbox" name="reptiles">
+                                <label for="animals" name="peces">Peces</label>
+                                <input type="checkbox" name="peces">
+                            </fieldset>
+                            <div align="center">
+                                <br>
+                                <label for="newsletter" name="newsletter">¿Le gustaría subscribirse a nuestro correo semanal?</label>
+                                <input type="checkbox" name="newsletter">
+                                <br>
+                                <br>
+                                <button class="btn" type="submit">ENVIAR</button>
+                                <button class="btn" type="reset">BORRAR</button>
+                            </div>
+                        </fieldset>
+                        <br>
+                    </form>
+                </section>
+            </main>
+        <footer>
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Servicios</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Sucursales</a>
+                <a href="#">Contacto</a>
+            </nav>
+            <i>2018 Todos los Derechos reservados.</i>
+        </footer>
+        </div>
+    </body>
+</html>
