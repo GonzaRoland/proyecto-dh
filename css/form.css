@@ -19,11 +19,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*width: 1600px;*/
+    width: 100%;
 }
 
 .logo {
-    border: 2px solid darkgray;
+    border: 2px solid rgb(98, 0, 190);
     width: 200px;
     border-radius: 60%;
     margin-bottom: 10px; 
@@ -38,18 +38,42 @@ body {
 
 .main-nav a{
     text-align: center;
-    width: 100%; /*le puse el 100% xq sino el contenido desbordaba*/
-    padding: 15px; /* le puse 15px a todos xq sino los márgenes laterales se pegaban a la tipografía */
-    display: flex;
+    width: 12.5%;
+    padding: 15px 0px 15px 0px;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 10%;
     color: white;
-    background-color: rgb(100, 100, 100); /*Cambié el color, me parece que quedan mejor éstos y saqué la opacidad, porque en el menú querés que las opciones sean bien legibles y de fácil acceso, no al revés*/
+    background-color: rgb(100, 100, 100);
+    opacity: 0.8; 
 }
 
-.main-nav a:hover {
+/*.main-nav a:hover {
     background-color: rgb(98, 0, 190); /*Cambié el color, me parece que quedan mejor éstos y saqué la opacidad, porque en el menú querés que las opciones sean bien legibles y de fácil acceso, no al revés*/
-}
+
+    .user {
+        display: flex;
+        width: 18%;
+        justify-content: space-around;
+      
+    }
+    
+    .user a{
+        text-align: center;
+        width: 40%;
+        padding: 15px 0px 15px 0px;
+        text-decoration: none;
+        border-radius: 10%;
+        color: white;
+        background-color: rgb(98, 0, 190); 
+        opacity: 0.8; 
+    }
+    
+
+    .main-nav a:hover {
+        background-color: rgb(98, 0, 190);
+        opacity: 1;
+    
+    }
 
 .banner{
     margin: 10px 0px 10px 0px;
@@ -83,24 +107,26 @@ body {
     border: 1px solid rgb(150, 150, 150);
     border-radius: 5px;
     padding: 2%;
+    margin: 0px;
 }
 
-.user a{
+/*.user a{
     box-align: right;
     color: rgb(98, 0, 190);
     display: block;
     float: right;
     text-align: right;
     text-decoration: none;
-}
+}*/
 
 .user a:visited{
-    color: rgb(50, 50, 50);
+    color: white;
 }
 
 fieldset{
     border: 1px solid rgb(50, 50, 50);
     border-radius: 5px;
+    width: 100%;
 }
 
 h3{
@@ -112,17 +138,22 @@ input{
     font-weight: 400;
 }
 
-main section{
+.form {
     background-color: rgba(150, 150, 150, 0.5);
     border: 1px solid rgb(150, 150, 150);
     border-radius: 5px;
-    padding: 10px;
+    /*padding: 10px;*/
+    width: 100%;
+}
+.form form{
+    width: 100%;
 }
 
 /* Hasta acá */
 
 main {
     margin: 10px 0px 10px 0px;
+    width: 596px;
 }
 
 p {
@@ -155,11 +186,32 @@ i {
     text-align: center;
 }
 
+@media (max-width: 1071.98px) {
+    
+    
+    .user a{
+        width: 77.18px;
+    }
+}
+
+@media (max-width: 861.98px) {
+    .user {
+        width: 155.09px;
+    }
+
+    .user a{
+        width: 77.18px;
+    }
+}
+
 @media (max-width: 767.98px) {
     .main-nav a{
         width: 96px;
         font-size: 1em;
     }
+
+   
+
     .doggo{
         max-width: 40%;
     }
@@ -168,6 +220,18 @@ i {
         width: 50%;
     }
 }
+
+
+@media (max-width: 630px){
+    
+    main {
+        width: 96.91056910569106%;
+    }
+
+    .form {
+        width: 100%;
+        justify-content: space-around;
+    }
 
 @media (max-width: 575.98px) {
     
@@ -180,11 +244,17 @@ i {
         width: 100%;
         border-bottom: 1px solid white;
     }
-
-    /*Agrego la clase acá para el responsive*/
-    .datos{
+    .user {
+        flex-direction: column;
         width: 100%;
     }
+
+    .user a{
+        border-radius: 0%;
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+
 }
 
 @media (max-width: 424.98px) {

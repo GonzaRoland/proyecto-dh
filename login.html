@@ -2,46 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>DOGGOS - LOGIN</title>
+        <title>DOGGOS - Inicio de sesión</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/normalize.css" rel="stylesheet">
-        <link href="css/form.css" rel="stylesheet">
+        <link href="css/master.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Varela+Round" rel="stylesheet">
     </head>
     <body>
         <div class="flex-container">
             <header class="main-header">
-                <img class="logo" src="img/logo.png">
-                <section class="user">
-                    <article>
-                        <a href="login.html">Iniciar Sesión</a>
-                    </article>
-                    <article>
-                        <a href="form.html">Registrate</a>
-                    </article>
-                </section>
+                <img class="logo" src="img/logo2.png">
+                <div class="navs">
+                 
                 <nav class="main-nav">
-                    <a href="index.html">Home</a>
-                    <a href="#">Nosotros</a>
-                    <a href="#">Servicios</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Sucursales</a>
+                    <a href="index.html">Inicio</a>
+                    <a href="#">Productos</a>
+                    <a href="frecuentes.html">FAQ</a>
                     <a href="#">Contacto</a>
+                    <!-- <div class="user">
+                        <a href="login.html">Login</a>
+                        <a href="form.html">Regístrese</a>
+                    </div> -->
                 </nav>
-                <!-- <section class="banner">
-                    <img src="img/banner.jpg">
-                </section> lo saqué porque me parece que molestaba-->
+                <div class="user">
+                        <a href="login.html">Login</a>
+                        <a href="form.html">Regístrese</a>
+                    </div>
+                </div>
+                <!-- <section class="banner"> 
+                    <img src="img/banneredit.jpg"> -->
+                </section>
             </header>
             <main>
-                <section>
-                    <fieldset>
+            <main>
+                <section >
+                    <fieldset class="login-form">
                         <label for="user">Nombre de usuario:</label>
                         <br>
-                        <input type="text" placeholder="Ingresá tu nombre de usuario">
+                        <input type="text" placeholder="Ingresá tu nombre">
                         <br>
-                        <label for="password">Password:</label>
+                        <label for="password">Contraseña:</label>
                         <br>
-                        <input type="password" placeholder="Ingresá tu contraseña">
+                        <input type="password">
                     </fieldset>
                     <div align="center">
                         <br>
@@ -52,12 +55,12 @@
             </main>
         <footer>
             <nav class="footer-nav">
-                <a href="index.html">Home</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Servicios</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Sucursales</a>
-                <a href="#">Contacto</a>
+                <a href="index.html">Inicio</a>
+                    <a href="#">Productos</a>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Contacto</a>
+                    <a href="login.html">Login</a>
+                    <a href="form.html">Regístrese</a>
             </nav>
             <i>2018 Todos los Derechos reservados.</i>
         </footer>

@@ -23,42 +23,159 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*width: 1600px;*/
+    width: 100%;
 }
 
 .logo {
-    border: 2px solid darkgray;
-    width: 200px;
-    border-radius: 60%;
+    /*border: 2px solid rgb(98, 0, 190);*/
+    width: 320px;
+    /*border-radius: 60%;*/
     margin-bottom: 10px; 
+    align-self: flex-start;
+    position: relative;
+    left: 100px;
+}
+
+.navs {
+    width:100%;
+    display: flex;
 }
 
 .main-nav {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     margin: 10px 0px 10px 0px;
+    opacity: 0.8;
 }
 
 .main-nav a{
     text-align: center;
-    width: 12.5%;
-    padding: 15px 0px 15px 0px;
+    width: 25%;
+    padding: 20px 0px 15px 0px;
     text-decoration: none;
-    border-radius: 10%;
+    /*border-radius: 10%;*/
     color: white;
-    background-color: darkgray;
-    opacity: 0.8; 
+    background-color: rgb(100, 100, 100);
+    opacity: 0.8;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em; 
 
 }
 
+.user {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+  
+}
+
+.user a{
+    text-align: center;
+    width: 50%;
+    padding: 22px 0px 15px 0px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(98, 0, 190); 
+    opacity: 0.8; 
+    font-family: sans-serif;
+    font-size: 1em;
+    margin: 10px 0px 10px 0px;
+}
+
+.user a:hover{
+    opacity: 1;
+}
+
+.a:visited {
+    color: white;
+}
+
+
 .main-nav a:hover {
+    background-color: rgb(98, 0, 190);
     opacity: 1;
 
 }
 
 .banner{
     margin: 10px 0px 10px 0px;
+}
+
+.btn{
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+.btn:hover{
+    background-color: rgb(98, 0, 190);
+}
+
+.datos{
+    width: 594px;
+}
+
+.p-form {
+    color: rgb(98, 0, 190);
+    text-decoration: underline;
+}
+
+.ppal{
+    background-color: rgba(98, 0, 190, 0.3);
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 2%;
+    margin: 0px;
+    width: 100%;
+}
+
+.user a:visited{
+    color: white;
+}
+
+fieldset{
+    /*border: 1px solid rgb(50, 50, 50);*/
+    /*border-radius: 5px;*/
+    width: 100%;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    /*background-color: rgb(150, 150, 150);*/
+    opacity: 1;
+}
+
+/*fieldset:hover{
+    background-color: rgb(98, 0, 190);
+    color: white;
+    opacity: 0.8;
+
+}*/
+fieldset label {
+    font-family: 'Josefin Sans', sans-serif;
+}
+h3{
+    text-decoration: underline;
+}
+
+input{
+    color: black;
+    font-weight: 400;
+}
+
+.form {
+    /*background-color: rgba(150, 150, 150, 0.5);*/
+    /*border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;*/
+    /*padding: 10px;*/
+    width: 100%;
+    opacity: 1;
+}
+.form form{
+    width: 100%;
 }
 
 .vip-doggos {
@@ -69,8 +186,27 @@ body {
     max-width: 1600px;
 }
 
+
 main {
     margin: 10px 0px 10px 0px;
+}
+
+.novedades {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2em; 
+    color: rgb(98, 0, 190);
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-decoration: wavy;
+    
+}
+
+
+.main-form {
+    margin: 10px 0px 10px 0px;
+    width: 800px;
+    font-size: 0.8em;
 }
 
 .doggo {
@@ -80,10 +216,37 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.login-form{
+    background-color: rgb(100, 100, 100);
+    opacity: 0.8;
+    color: white; 
+}
+
+.login-form:hover {
+    background-color: rgb(98, 0, 190);
+     
+}
+
+/*.new-1 {
+    position: sticky;
+    width: 100px;
+    z-index: 1000;
+    top: 1025px;
+    left: 305px;
+}
+
+.new-2 {
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
+    top: 1025px;
+    left: 305px;
+}*/
+
 .doggo-pic {
     max-width: 100%;
-    border-radius: 5%;
-    border: 3px darkgray;
+    border: 1px rgb(98, 0, 190);
     border-style: inset;
 }
 
@@ -100,19 +263,21 @@ p {
     text-decoration: none;
     border-radius: 10%;
     color: white;
-    background-color: darkgray;
+    background-color: rgb(100, 100, 100);
     opacity: 0.8; 
     margin: 10px 0px 10px 0px;
 }
 
 .doggo a:hover{
-    opacity: 1;
+    background-color: rgb(98, 0, 190); 
 }
 
 .footer-nav {
     margin-top: 30px;
     display: flex;
     flex-direction: row;
+    align-content: center;
+    
 }
 
 footer {
@@ -135,11 +300,37 @@ i {
     text-align: center;
 }
 
+/* media (max-width: 1071.98px) {
+    
+    
+    .user a{
+        width: 77.18px;
+    }
+}*/
+
+ @media (max-width: 861.98px) {
+    /*.user {
+        width: 155.09px;
+    }*/
+
+    .user a{
+        font-size: 0.8em;
+        padding: 26px 0px 15px 0px; 
+    }
+
+    .main-form{
+        width: 92.80742459396752%
+    }
+} 
+
 @media (max-width: 767.98px) {
-    .main-nav a{
+    /*.main-nav a{
         width: 96px;
         font-size: 1em;
-    }
+    }*/
+
+   
+
     .doggo{
         max-width: 40%;
     }
@@ -149,17 +340,44 @@ i {
     }
 }
 
+
+
 @media (max-width: 575.98px) {
     
     .main-nav{
         flex-direction: column;
+        width: 100%;
+        margin: 10px 0px 0px 0px;
     }
     
+    .navs {
+        flex-direction: column;
+    }
+
     .main-nav a{
         border-radius: 0%;
         width: 100%;
         border-bottom: 1px solid white;
     }
+    .user {
+        flex-direction: column;
+        width: 100%;
+        justify-content: start;
+    }
+
+    .user a{
+        border-radius: 0%;
+        width: 100%;
+        border-bottom: 1px solid white;
+        margin: 0px;
+        font-size: 1em;
+        padding: 20px 0px 15px 0px;  
+    }
+
+    .form {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 424.98px) {
