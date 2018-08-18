@@ -23,28 +23,20 @@ body {
 }
 
 .logo {
-<<<<<<< HEAD
     border: 2px solid rgb(98, 0, 190);
     width: 200px;
-=======
-    border: 2px solid darkgray;
->>>>>>> 6161af285d53985f7ed1ea65f7b9fcad0ef7349b
     border-radius: 60%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    width: 200px;
+    margin-bottom: 10px; 
 }
 
 .main-nav {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     margin: 10px 0px 10px 0px;
-    width: 100%;
 }
 
 .main-nav a{
-<<<<<<< HEAD
     text-align: center;
     width: 12.5%;
     padding: 15px 0px 15px 0px;
@@ -53,16 +45,6 @@ body {
     color: white;
     background-color: rgb(100, 100, 100);
     opacity: 0.8; 
-=======
-    background-color: rgb(100, 100, 100); /*Cambié el color, me parece que quedan mejor éstos y saqué la opacidad, porque en el menú querés que las opciones sean bien legibles y de fácil acceso, no al revés*/
-    border-radius: 10px; /*se lo puse en px xq sino se deforma la curva*/
-    color: white;
-    display: flex;
-    padding: 15px; /* le puse 15px a todos xq sino los márgenes laterales se pegaban a la tipografía */
-    text-align: center;
-    text-decoration: none;
-    width: 100%; /*le puse el 100% xq sino el contenido desbordaba*/
->>>>>>> 6161af285d53985f7ed1ea65f7b9fcad0ef7349b
 }
 
 /*.main-nav a:hover {
@@ -113,12 +95,6 @@ body {
 
 .datos{
     width: 594px;
-}
-
-.main-header section{
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
 }
 
 .p-form {
