@@ -2,6 +2,8 @@
 
 include_once('funciones.php');
 
+// No están declaradas las variables para guardar los datos, por eso la persistencia no funciona, mirar los ejemplos de la clase 7
+
 if($_POST) {
     $errores = validate($_POST);
     if (count($errores) == 0){
