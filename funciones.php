@@ -2,13 +2,15 @@
 
     session_start();
 
-    function dd($var){
+    function dd($var)
+    {
         echo"<pre>";
         die(var_dump($var));
         echo"<pre>";
     }
 
-    function old($user_input){
+    function old($user_input)
+    {
         if (isset($_POST["$user_input"])){
             return $_POST["$user_input"];
         }
@@ -31,7 +33,7 @@
         
         
         $email = trim($datos['email']);
-        // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
         if ($datos['email'] == ""){
             $errores['email'] = "El mail es obligatorio";
@@ -64,7 +66,6 @@
         $usuario = [
             'username' => $datos['username'],
             'email' => $datos['email'],
-
             'role' => 1,
             'password' => password_hash($datos['password'], PASSWORD_DEFAULT)
         ];
@@ -129,8 +130,6 @@
     // 1- Login
 
     function login($usuario) {
-        // Una vez se cumpla la validacion del login contra la base de datos
-        // seteamos como identificador de la misma, el email del usuario:
         $_SESSION["email"] = $usuario["email"];
         // dd($_SESSION);
         // Luego seteo la cookie. La mejor explicacion del uso de 

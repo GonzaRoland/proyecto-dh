@@ -5,7 +5,14 @@ include_once('funciones.php');
 if($_POST) {
     $errores = validate($_POST);
     if (count($errores) == 0){
-        //PONER EL RESTO DE LA VALIDACIÓN
+        // $usuario = createUser($_POST);
+        // $erroresAvatar = saveAvatar($usuario);
+        // $errores = array_merge($errores, $erroresAvatar);
+        // if(count($errores) == 0){
+        //     saveUser($usuario);
+        //     header('Location: login.php');
+        //     exit;
+        // }
     }
 }
 
@@ -26,26 +33,18 @@ if($_POST) {
         <div class="flex-container">
                 <header class="main-header">
                         <img class="logo" src="img/logo2.png">
-                        <div class="navs">
-                         
-                        <nav class="main-nav">
-                            <a href="index.html">Inicio</a>
-                            <a href="#">Productos</a>
-                            <a href="frecuentes.html">FAQ</a>
-                            <a href="#">Contacto</a>
-                            <!-- <div class="user">
-                                <a href="login.html">Login</a>
-                                <a href="form.html">Regístrese</a>
-                            </div> -->
-                        </nav>
-                        <div class="user">
-                                <a href="login.html">Login</a>
-                                <a href="registro.php">Regístrese</a>
+                        <div class="navs">                        
+                            <nav class="main-nav">
+                                <a href="index.html">Inicio</a>
+                                <a href="#">Productos</a>
+                                <a href="frecuentes.html">FAQ</a>
+                                <a href="#">Contacto</a>
+                            </nav>
+                            <div class="user">
+                                    <a href="login.html">Login</a>
+                                    <a href="registro.php">Regístrese</a>
                             </div>
                         </div>
-                        <!-- <section class="banner">
-                            <img src="img/banneredit.jpg"> -->
-                        </section>
                     </header>
                     <main>
             <main class="main-form">
@@ -56,10 +55,10 @@ if($_POST) {
                     <form class="datos" action="" method="POST" enctype="multipart/form-data">
                         <fieldset class="ppal">
                             <fieldset>
-                                <label for="nombre" name="nombre">Nombre:</label>
+                                <label for="nombre">Nombre:</label>
                                 <input type="text" name="nombre" value="<?php old('nombre') ?>" placeholder="Escribí tu nombre">
                                 <br>
-                                <label for="apellido" name="apellido">Apellido:</label>
+                                <label for="apellido">Apellido:</label>
                                 <input type="text" name="apellido" value="<?php old('apellido') ?>" placeholder="Escribí tu apellido">
                                 <br>
                                 <br>
@@ -74,8 +73,8 @@ if($_POST) {
                                 <input type="radio" name="genero">
                                 <br>
                                 <br>
-                                <label for="email" name="email">-Email:</label>
-                                <input type="email" name="mail" value="<?php !isset($errores['email']) ? old('email') : "" ?>" placeholder="Escribí tu e-Mail">
+                                <label for="email">-Email:</label>
+                                <input type="email" name="email" value="<?php !isset($errores['email']) ? old('email') : "" ?>" placeholder="Escribí tu e-Mail">
                                 <? if(isset($errores)) :?>
                                 <div class="alert"><p><strong><?= $errores['email'] ?></strong></p></div>
                                 <? endif; ?>
@@ -111,14 +110,14 @@ if($_POST) {
                             </fieldset>
                             <div align="center">
                                 <br>
-                                <label for="newsletter" name="newsletter">¿Le gustaría subscribirse a nuestro correo semanal?</label>
+                                <label for="newsletter">¿Le gustaría subscribirse a nuestro correo semanal?</label>
                                 <input type="checkbox" name="newsletter">
                                 <br>
-                                <label for="confirm" name="confirm">TÉRMINOS Y CONDICIONES</label>
+                                <label for="confirm">TÉRMINOS Y CONDICIONES</label>
                                 <input type="checkbox" name="confirm">
-                                <? if(isset($errores)) :?>
+                                <?php if(isset($errores)) :?>
                                 <div class="alert"><p><strong><?= $errores['confirm'] ?></strong></p></div>
-                                <? endif; ?>
+                                <?php endif; ?>
                                 <br>
                                 <br>
                                 <button class="btn" type="submit">ENVIAR</button>
