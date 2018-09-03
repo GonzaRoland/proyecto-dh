@@ -2,19 +2,26 @@
 
 include_once('funciones.php');
 
-// No están declaradas las variables para guardar los datos, por eso la persistencia no funciona, mirar los ejemplos de la clase 7
+$nombre = "";
+$apellido = "";
+$username = "";
+$email = "";
 
 if($_POST) {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
     $errores = validate($_POST);
     if (count($errores) == 0){
-        // $usuario = createUser($_POST);
-        // $erroresAvatar = saveAvatar($usuario);
-        // $errores = array_merge($errores, $erroresAvatar);
-        // if(count($errores) == 0){
-        //     saveUser($usuario);
-        //     header('Location: login.php');
-        //     exit;
-        // }
+        $usuario = createUser($_POST);
+        $erroresAvatar = saveAvatar($usuario);
+        $errores = array_merge($errores, $erroresAvatar);
+        if(count($errores) == 0){
+            saveUser($usuario);
+            header('Location: login.php');
+            exit;
+        }
     }
 }
 
@@ -43,8 +50,8 @@ if($_POST) {
                                 <a href="#">Contacto</a>
                             </nav>
                             <div class="user">
-                                    <a href="login.html">Login</a>
-                                    <a href="registro.php">Regístrese</a>
+                                <a href="login.php">Login</a>
+                                <a href="registro.php">Regístrese</a>
                             </div>
                         </div>
                     </header>
@@ -58,32 +65,35 @@ if($_POST) {
                         <fieldset class="ppal">
                             <fieldset>
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" name="nombre" value="<?php old('nombre') ?>" placeholder="Escribí tu nombre">
+                                <input type="text" name="nombre" value="<?= $nombre ?>" placeholder="Escribí tu nombre">
                                 <br>
                                 <label for="apellido">Apellido:</label>
-                                <input type="text" name="apellido" value="<?php old('apellido') ?>" placeholder="Escribí tu apellido">
+                                <input type="text" name="apellido" value="<?= $apellido ?>" placeholder="Escribí tu apellido">
                                 <br>
                                 <br>
                                 <h3><label for="genero" name="genero">Género</label></h3>
+                                <input type="radio" name="genero">
                                 <label for="genero" name="femenino">Femenino</label>
+                                <br>
                                 <input type="radio" name="genero">
                                 <label for="genero" name="indefinido">Indefinido</label>
+                                <br>
                                 <input type="radio" name="genero">
                                 <label for="genero" name="masculino">Masculino</label>
+                                <br>
                                 <input type="radio" name="genero">
                                 <label for="genero" name="otro">Otro</label>
-                                <input type="radio" name="genero">
                                 <br>
                                 <br>
                                 <label for="email">-Email:</label>
-                                <input type="email" name="email" value="<?php !isset($errores['email']) ? old('email') : "" ?>" placeholder="Escribí tu e-Mail">
+                                <input type="email" name="email" value="<?= $email ?>" placeholder="Escribí tu e-Mail">
                                 <? if(isset($errores)) :?>
                                 <div class="alert"><p><strong><?= $errores['email'] ?></strong></p></div>
                                 <? endif; ?>
                                 <br>
                                 <label for="username">Nombre de usuario:</label>
                                 <br>
-                                <input type="text" name="username" value="<?php !isset($errores['username']) ? old('username') : "" ?>" placeholder="Elegí tu nombre de usuario">
+                                <input type="text" name="username" value="<?= $username ?>" placeholder="Elegí tu nombre de usuario">
                                 <? if(isset($errores)) :?>
                                 <div class="alert"><p><strong><?= $errores['username'] ?></strong></p></div>
                                 <? endif; ?>
@@ -136,8 +146,8 @@ if($_POST) {
                     <a href="#">Productos</a>
                     <a href="frecuentes.html">FAQ</a>
                     <a href="#">Contacto</a>
-                    <a href="login.html">Login</a>
-                    <a href="form.html">Regístrese</a>
+                    <a href="login.php">Login</a>
+                    <a href="registro.php">Regístrese</a>
             </nav>
             <i>2018 Todos los Derechos reservados.</i>
         </footer>
