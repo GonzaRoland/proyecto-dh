@@ -2,16 +2,17 @@
 
 include_once('funciones.php');
 
-if($_POST){
-    $usuario = buscamePorEmail($_POST['email']);
-    if($usuario !== null) {
-        if(password_verify($_POST['password'], $usuario['password']) === true){
-            login($usuario);
-        }
-    }
-    if(loginController()) {
-        header('Location: perfil.php');
-        exit;
+if($_SESSION)
+{
+    $usuario = buscamePorEmail($_SESSION['email']);
+    $username = $usuario['username'];
+    $id = $usuario['id'];
+
+    if(isset(glob("img/perfil$id.*")[0]))
+    {
+        $archivo = glob("img/perfil$id.*")[0];
+    } else {
+        $archivo = null;
     }
 }
 
@@ -45,23 +46,11 @@ if($_POST){
                 </div>
             </header>
             <main>
-                <section>
-                    <form action="" method="post">
-                        <fieldset class="login-form">
-                            <label for="user">Nombre de usuario:</label>
-                            <br>
-                            <input type="text" placeholder="Ingresá tu nombre">
-                            <br>
-                            <label for="password">Contraseña:</label>
-                            <br>
-                            <input type="password" placeholder="Ingresá tu contraseña">
-                        </fieldset>
-                        <div align="center">
-                            <br>
-                            <button class="btn" type="submit">ENVIAR</button>
-                            <button class="btn" type="reset">BORRAR</button>
-                        </div>
-                    </form>
+                <section >
+                    <fieldset class="login-form">
+
+                    NADA
+                    
                 </section>
             </main>
             <footer>

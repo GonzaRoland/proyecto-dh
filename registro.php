@@ -13,15 +13,21 @@ if($_POST) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $errores = validate($_POST);
-    if (count($errores) == 0){
+
+    if (count($errores) === 0){
         $usuario = createUser($_POST);
         $erroresAvatar = saveAvatar($usuario);
         $errores = array_merge($errores, $erroresAvatar);
-        if(count($errores) == 0){
-            saveUser($usuario);
-            header('Location: login.php');
-            exit;
-        }
+
+        saveUser($usuario);
+        header('Location: login.php');
+        exit;
+        // if(count($errores) === 0){
+
+        // dd($_POST);
+        // exit;
+
+        // }
     }
 }
 
@@ -94,6 +100,13 @@ if($_POST) {
                                 <label for="username">Nombre de usuario:</label>
                                 <br>
                                 <input type="text" name="username" value="<?= $username ?>" placeholder="Elegí tu nombre de usuario">
+                                <? if(isset($errores)) :?>
+                                <div class="alert"><p><strong><?= $errores['username'] ?></strong></p></div>
+                                <? endif; ?>
+                                <br>
+                                <label for="avatar">Avatar: </label>
+                                <br>
+                                <input type="file" name="avatar">
                                 <? if(isset($errores)) :?>
                                 <div class="alert"><p><strong><?= $errores['username'] ?></strong></p></div>
                                 <? endif; ?>

@@ -176,7 +176,7 @@
         
         $id = $usuario["id"];
 
-        if ($_FILES["avatar"]["error"] == UPLOAD_ERR_OK) {
+        if ($_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
 
             $nombre = $_FILES["avatar"]["name"];
             $archivo = $_FILES["avatar"]["tmp_name"];
@@ -184,7 +184,7 @@
             $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
             if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
-                $errores["avatar"] = "Solo acepto formatos jpg y png";
+                $errores["avatar"] = "Solo formatos jpg y png son admitidos";
                 return $errores;
             }
 
