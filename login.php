@@ -48,13 +48,13 @@ if($_POST){
                 <section>
                     <form action="" method="post">
                         <fieldset class="login-form">
-                            <label for="user">Nombre de usuario:</label>
+                            <label for="user">e-Mail:</label>
                             <br>
-                            <input type="text" placeholder="Ingresá tu nombre">
+                            <input type="text" name="email" placeholder="Ingresá tu nombre">
                             <br>
                             <label for="password">Contraseña:</label>
                             <br>
-                            <input type="password" placeholder="Ingresá tu contraseña">
+                            <input type="password" name="password" placeholder="Ingresá tu contraseña">
                         </fieldset>
                         <div align="center">
                             <br>

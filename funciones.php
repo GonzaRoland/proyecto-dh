@@ -184,7 +184,7 @@
             $ext = pathinfo($nombre, PATHINFO_EXTENSION);
 
             if ($ext != "jpg" && $ext != "png" && $ext != "jpeg") {
-                $errores["avatar"] = "Solo formatos jpg y png son admitidos";
+                $errores["avatar"] = "Solo admitimos formatos jpg y png";
                 return $errores;
             }
 
