@@ -20,8 +20,8 @@
     //Validaciones
 
     function validate($datos){
+        
         $errores = [];
-
 
         $username = trim($datos['username']);
 

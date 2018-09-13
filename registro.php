@@ -6,20 +6,22 @@ $nombre = "";
 $apellido = "";
 $username = "";
 $email = "";
+$errores = [];
 
 if($_POST) {
+   // $errores = [];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $errores = validate($_POST);
-
+    //dd($errores);
     if (count($errores) === 0){
         $usuario = createUser($_POST);
+        saveUser($usuario);
         $erroresAvatar = saveAvatar($usuario);
         $errores = array_merge($errores, $erroresAvatar);
 
-        saveUser($usuario);
         header('Location: login.php');
         exit;
         // if(count($errores) === 0){
@@ -32,6 +34,8 @@ if($_POST) {
 }
 
 ?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,22 +50,21 @@ if($_POST) {
     </head>
     <body>
         <div class="flex-container">
-                <header class="main-header">
-                        <img class="logo" src="img/logo2.png">
-                        <div class="navs">                        
-                            <nav class="main-nav">
-                                <a href="index.html">Inicio</a>
-                                <a href="#">Productos</a>
-                                <a href="frecuentes.html">FAQ</a>
-                                <a href="#">Contacto</a>
-                            </nav>
-                            <div class="user">
-                                <a href="login.php">Login</a>
-                                <a href="registro.php">Regístrese</a>
-                            </div>
-                        </div>
-                    </header>
-                    <main>
+        <header class="main-header">
+                <img class="logo" src="img/logo2.png">
+                <div class="navs">                        
+                    <nav class="main-nav">
+                        <a href="index.html">Inicio</a>
+                        <a href="#">Productos</a>
+                        <a href="frecuentes.html">FAQ</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+                    <div class="user">
+                        <a href="login.php">Login</a>
+                        <a href="registro.php">Regístrese</a>
+                    </div>
+                </div>
+            </header>
             <main class="main-form">
                 <section class="form">
                     <p align="center" class="p-form"><strong>¡Creá tu cuenta con nosotros!</strong></p>
@@ -93,31 +96,34 @@ if($_POST) {
                                 <br>
                                 <label for="email">-Email:</label>
                                 <input type="email" name="email" value="<?= $email ?>" placeholder="Escribí tu e-Mail">
-                                <? if(isset($errores)) :?>
-                                <div class="alert"><p><strong><?= $errores['email'] ?></strong></p></div>
-                                <? endif; ?>
+                                <?php if(isset($errores['email'])):?>
+                                <div class="alert"><p><strong><?=$errores['email']?></strong></p></div>
+                                <?php endif;?>
+                                <br>
                                 <br>
                                 <label for="username">Nombre de usuario:</label>
                                 <br>
                                 <input type="text" name="username" value="<?= $username ?>" placeholder="Elegí tu nombre de usuario">
-                                <? if(isset($errores)) :?>
+                                <?php if(isset($errores['username'])) :?>
                                 <div class="alert"><p><strong><?= $errores['username'] ?></strong></p></div>
-                                <? endif; ?>
+                                <?php endif; ?>
+                                <br>
                                 <br>
                                 <label for="avatar">Avatar: </label>
                                 <br>
                                 <input type="file" name="avatar">
-                                <? if(isset($errores)) :?>
-                                <div class="alert"><p><strong><?= $errores['username'] ?></strong></p></div>
-                                <? endif; ?>
+                                <?php if(isset($errores['avatar'])) :?>
+                                <div class="alert"><p><strong><?= $errores['avatar'] ?></strong></p></div>
+                                <?php endif; ?>
+                                <br>
                                 <br>
                                 <label for="password">Password:</label>
                                 <br>
                                 <input type="password" name="password" placeholder="Elegí tu contraseña">
                                 <input type="password" name="cpassword" placeholder="Confirmá tu contraseña">
-                                <? if(isset($errores)) :?>
+                                <?php if(isset($errores['password'])) :?>
                                 <div class="alert"><p><strong><?= $errores['password'] ?></strong></p></div>
-                                <? endif; ?>
+                                <?php endif; ?>
                             </fieldset>
                             <fieldset>
                                 <h3><label for="animals">¿Qué animales te gustan?</label></h3>
@@ -140,7 +146,7 @@ if($_POST) {
                                 <br>
                                 <label for="confirm">TÉRMINOS Y CONDICIONES</label>
                                 <input type="checkbox" name="confirm">
-                                <?php if(isset($errores)) :?>
+                                <?php if(isset($errores['confirm'])) :?>
                                 <div class="alert"><p><strong><?= $errores['confirm'] ?></strong></p></div>
                                 <?php endif; ?>
                                 <br>
