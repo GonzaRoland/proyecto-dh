@@ -7,11 +7,13 @@ $password = "";
 $errores = [];
 
 if($_POST){
+    $errores = [];
     $email = $_POST['email'];
+    $usuario = $_POST['email'];
     $errores = logValidate($_POST);
     if (count($errores) === 0){
-        // dd($errores);
-        // exit;
+        //  dd($errores);
+        //  exit;
         login($usuario);
         if(loginController()) {
             header('Location: perfil.php');
@@ -31,6 +33,7 @@ if($_POST){
         <link href="css/reset.css" rel="stylesheet">
         <link href="css/normalize.css" rel="stylesheet">
         <link href="css/master.css" rel="stylesheet">
+        <link href="css/register.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Varela+Round" rel="stylesheet">
     </head>
     <body>
