@@ -35,7 +35,7 @@
         $email = trim($datos['email']);
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-        if ($datos['email'] == ""){
+        if ($email == ""){
             $errores['email'] = "El mail es obligatorio";
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $errores['email'] = "Introduzca un email válido";
@@ -44,11 +44,11 @@
         
         $password = trim($datos['password']);
 
-        if ($datos['password'] == ""){
+        if ($password == ""){
             $errores['password'] = "Tenés que elegir una contraseña";
-        } elseif (strlen($datos['password']) <= 5){
+        } elseif (strlen($password) <= 5){
             $errores['password'] = "La contraseña debe tener mínimo 6 caracteres";
-        } elseif ($datos['password'] != $datos['cpassword']){
+        } elseif ($password != $datos['cpassword']){
             $errores['password'] = "Las contraseñas deben ser iguales";
         }
 
@@ -58,6 +58,35 @@
 
         return $errores;
 
+    }
+
+    function logValidate($usuario)
+    {
+        $errores = [];
+
+        $email = trim($usuario['email']);
+
+        if ($usuario = buscamePorEmail($email) === false || $email === "")
+        {
+            $errores['email'] = "El email ingresado es inválido o está vacío";
+            // dd($errores);
+        }
+        // elseif ($email == "")
+        // {
+        //     $errores['email'] = "Tienes que ingresar tu email para ingresar";
+        //     dd($errores);
+        //     exit;
+        // }
+
+        $usuario = buscamePorEmail($_POST['email']);
+        // dd($usuario['password']);
+        // dd($_POST['password']);
+        if (password_verify($usuario['password'], $_POST['password']) !== true)
+        {
+            $errores['password'] = "La contraseña ingresada es inválida";
+            dd($errores);
+            exit;
+        }
     }
 
     // Registro/Login

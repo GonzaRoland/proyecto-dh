@@ -2,16 +2,22 @@
 
 include_once('funciones.php');
 
+$email = "";
+$password = "";
+$errores = [];
+
 if($_POST){
-    $usuario = buscamePorEmail($_POST['email']);
-    if($usuario !== null) {
-        if(password_verify($_POST['password'], $usuario['password']) === true){
-            login($usuario);
+    $email = $_POST['email'];
+    $errores = logValidate($_POST);
+    if (count($errores) === 0){
+        // dd($errores);
+        // exit;
+        login($usuario);
+        if(loginController()) {
+            header('Location: perfil.php');
+            exit;
         }
-    }
-    if(loginController()) {
-        header('Location: perfil.php');
-        exit;
+        
     }
 }
 
@@ -50,11 +56,19 @@ if($_POST){
                         <fieldset class="login-form">
                             <label for="user">e-Mail:</label>
                             <br>
-                            <input type="text" name="email" placeholder="Ingresá tu nombre">
+                            <input type="text" name="email" value="<?= $email ?>" placeholder="Escribí tu e-Mail">
+                            <br>
+                            <?php if(isset($errores['email'])):?>
+                                <div class="alert"><p><strong><?=$errores['email']?></strong></p></div>
+                            <?php endif;?>
                             <br>
                             <label for="password">Contraseña:</label>
                             <br>
                             <input type="password" name="password" placeholder="Ingresá tu contraseña">
+                            <br>
+                            <?php if(isset($errores['password'])) :?>
+                                <div class="alert"><p><strong><?= $errores['password'] ?></strong></p></div>
+                            <?php endif; ?>
                         </fieldset>
                         <div align="center">
                             <br>
